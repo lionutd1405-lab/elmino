@@ -3,108 +3,265 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>آموزشگاه علمی نو | شبستر</title>
+    <title>دوره جامع ICDL | آموزشگاه علمی نو</title>
     <style>
-        /* استایل مدرن و شیک برای سایت شما */
-        body {
-            font-family: 'Tahoma', 'Arial', sans-serif;
-            background: linear-gradient(135deg, #e0eafc, #cfdef3);
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            color: #333;
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;700;900&display=swap');
+
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #0f172a;
+            --accent-color: #00b894;
+            --register-color: #f59e0b; /* رنگ طلایی برای دکمه ثبت نام */
+            --text-light: #f8fafc;
+            --text-dark: #1e293b;
         }
 
-        header {
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(10px);
-            width: 100%;
-            padding: 20px 0;
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+        }
+
+        body {
+            background-color: #f1f5f9;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* بخش هدر و قهرمان */
+        .hero {
+            background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+            color: var(--text-light);
+            padding: 80px 20px;
             text-align: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .badge {
+            background: var(--accent-color);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        /* استایل جدید دکمه ثبت نام */
+        .register-now-btn {
+            display: inline-block;
+            background: var(--register-color);
+            color: white;
+            padding: 15px 35px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: 0.3s;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            margin-top: 10px;
+        }
+        .register-now-btn:hover {
+            transform: scale(1.05);
+            background: #d97706;
+        }
+
+        /* بخش محتوا */
+        .container {
+            max-width: 1100px;
+            margin: -50px auto 50px;
+            padding: 0 20px;
+        }
+
+        .section {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
             margin-bottom: 30px;
         }
 
-        h1 { margin: 0; color: #2c3e50; font-size: 28px; }
-        .manger-name { color: #34495e; font-weight: bold; margin-top: 5px; }
-        
-        .container {
-            width: 90%;
-            max-width: 800px;
-            background: white;
-            padding: 20px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            margin-bottom: 50px;
+        h2 {
+            color: var(--primary-color);
+            margin-bottom: 25px;
+            text-align: center;
+            font-size: 2rem;
         }
 
-        .contact-info {
-            background: #f8f9fa;
+        /* بخش ویژگی‌های دوره */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .feature-item {
+            padding: 20px;
+            border: 1px solid #e2e8f0;
+            border-radius: 15px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-color);
+        }
+
+        .feature-item h3 {
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+        }
+
+        /* بخش تماس و شبکه اجتماعی */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .social-links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .social-card {
+            width: 100%;
+            padding: 15px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: white;
+            text-align: center;
+            font-weight: bold;
+            transition: 0.3s;
+            display: block;
+        }
+
+        .ita { background: #28a745; }
+        .rubika { background: #ff4757; }
+        .bale { background: #007bff; }
+
+        .social-card:hover { opacity: 0.8; transform: scale(1.02); }
+
+        .info-card {
+            background: #f8fafc;
+            padding: 25px;
+            border-radius: 15px;
+            border-right: 5px solid var(--primary-color);
+        }
+
+        .phone-number {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            font-weight: bold;
+            display: block;
+            margin: 15px 0;
+            text-decoration: none;
+        }
+
+        .call-btn {
+            display: block;
+            background: var(--accent-color);
+            color: white;
+            text-align: center;
             padding: 15px;
             border-radius: 10px;
-            margin-bottom: 25px;
-            font-size: 14px;
-            line-height: 1.8;
-            border-right: 5px solid #3498db;
-        }
-
-        .form-wrapper {
-            position: relative;
-            width: 100%;
-            /* ارتفاع فرم را از اینجا می‌توانید تنظیم کنید */
-            height: 800px; 
-            overflow: hidden;
-            border-radius: 15px;
-        }
-
-        iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
         }
 
         footer {
-            margin: 30px 0;
-            font-size: 12px;
-            color: #7f8c8d;
+            text-align: center;
+            padding: 40px;
+            color: #64748b;
         }
 
-        /* ریسپانسیو برای موبایل */
-        @media (max-width: 600px) {
-            h1 { font-size: 22px; }
-            .container { width: 95%; padding: 10px; }
-            .form-wrapper { height: 1000px; } /* در موبایل فرم طولانی‌تر است */
+        /* ریسپانسیو */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .hero p { font-size: 1.1rem; }
+            .container { margin-top: 20px; }
+            .section { padding: 25px; }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>آموزشگاه علمی نو</h1>
-        <div class="manger-name">مدیریت: مهندس بهروز ریحان‌بند</div>
-    </header>
+    <section class="hero">
+        <span class="badge">فرصت استثنایی برای یادگیری</span>
+        <h1>دوره جامع مهارت‌های کامپیوتری ICDL</h1>
+        <p>«همگام با تکنولوژی، معمار آینده‌ی دیجیتال خود باشید»</p>
+        <!-- دکمه جدید که اضافه شد -->
+        <a href="https://formafzar.com/form/9xlxw" target="_blank" class="register-now-btn">🚀 ثبت نام در دوره کامپیوتر</a>
+    </section>
 
     <div class="container">
-        <div class="contact-info">
-            📍 <strong>آدرس:</strong> شبستر، خیابان امام، روبروی نوبل تحریر، ساختمان حافظ، طبقه ۴ <br>
-            📞 <strong>تماس:</strong> 09906349290 <br>
-            ✨ <em>«همگام با تکنولوژی، معمار آینده‌ی دیجیتال خود باشید»</em>
+        
+        <!-- بخش ویژگی‌های دوره -->
+        <div class="section">
+            <h2>چرا دوره ICDL ما؟</h2>
+            <div class="features">
+                <div class="feature-item">
+                    <h3>💻 آموزش عملی</h3>
+                    <p>یادگیری مستقیم روی نرم‌افزارهای کاربردی و پروژه‌محور.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>📜 اعتبار بالا</h3>
+                    <p>آموزش طبق استانداردهای بین‌المللی برای ورود به ادارات.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>🚀 تسلط کامل</h3>
+                    <p>تسلط بر آفیس، اینترنت و امنیت دیجیتال در کمترین زمان.</p>
+                </div>
+            </div>
         </div>
 
-        <h2 style="text-align: center; color: #2980b9;">فرم ثبت‌نام دوره‌ها</h2>
-        
-        <div class="form-wrapper">
-            <!-- من لینک شما را به فرمت Embed تبدیل کردم تا داخل سایت نمایش داده شود -->
-            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf8P_KImq_yX9p6lW6j9M6-t9D6YwL_xS7D-v_B5eL2n_0HAg/viewform?embedded=true">
-                در حال بارگذاری فرم...
-            </iframe>
+        <div class="contact-grid">
+            <!-- بخش اطلاعات تماس -->
+            <div class="section">
+                <h2>اطلاعات واحد آموزش</h2>
+                <div class="info-card">
+                    <p><strong style="color: var(--primary-color);">مدیریت:</strong> مهندس بهروز ریحان‌بند</p>
+                    <p style="margin-top:10px;"><strong style="color: var(--primary-color);">📍 آدرس:</strong> شبستر، خیابان امام، روبروی نوبل تحریر، ساختمان حافظ، طبقه ۴</p>
+                    <hr style="margin:20px 0; opacity: 0.2;">
+                    <p><strong style="color: var(--primary-color);">📞 تماس مستقیم جهت ثبت‌نام:</strong></p>
+                    <a href="tel:09906349290" class="phone-number">09906349290</a>
+                    <a href="tel:09906349290" class="call-btn">کلیک کنید و تماس بگیرید</a>
+                </div>
+            </div>
+
+            <!-- بخش شبکه‌های اجتماعی -->
+            <div class="section">
+                <h2>ارتباط با ما</h2>
+                <p style="text-align: center; margin-bottom: 20px; color: #64748b;">شناسه‌ی کاربری: behruz_reihanband</p>
+                <div class="social-links">
+                    <a href="https://eitaa.com/behruz_reihanband" target="_blank" class="social-card ita">ارتباط در ایتا</a>
+                    <a href="https://rubika.ir/behruz_reihanband" target="_blank" class="social-card rubika">ارتباط در روبیکا</a>
+                    <a href="https://ble.ir/behruz_reihanband" target="_blank" class="social-card bale">ارتباط در بله</a>
+                </div>
+            </div>
         </div>
+
     </div>
 
     <footer>
-        تمامی حقوق برای آموزشگاه علمی نو محفوظ است &copy; 2026
+        <p>آموزشگاه علمی نو | مدیریت: مهندس بهروز ریحان‌بند</p>
+        <p>&copy; 2026 تمامی حقوق محفوظ است.</p>
     </footer>
 
 </body>
